@@ -11,7 +11,7 @@ var app 			= express();
 /*  for the json dependencies
 	"morgan": "~1.8.1",
 	"debug": "~2.6.3",
-    "pug": "~2.0.0-beta11",*/
+*/
 
 
 app.use(function (req, res, next) {
@@ -24,7 +24,7 @@ app.use(function (req, res, next) {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'pug');
+app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

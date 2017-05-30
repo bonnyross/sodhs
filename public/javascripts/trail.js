@@ -6,7 +6,8 @@ var map = L.map('map', {
 
 var imageUrl = 'http://alecross-pc:3000/sodhs/map',
 	imageBounds = [[52.35258,-1.40714],[52.34787,-1.39664]];
-L.imageOverlay(imageUrl, imageBounds).addTo(map);
+var tile = L.imageOverlay(imageUrl, imageBounds).addTo(map);
+tile.setOpacity(0.6)
 	
 function style(feature) {
     return {
