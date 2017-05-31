@@ -4,7 +4,7 @@ var map = L.map('map', {
 	zoom: 18
 }).fitBounds([[52.350488,-1.403351],[52.348505,-1.401002]]);
 
-var imageUrl = 'http://alecross-pc:3000/sodhs/map',
+var imageUrl = '/sodhs/map',
 	imageBounds = [[52.35258,-1.40714],[52.34787,-1.39664]];
 var tile = L.imageOverlay(imageUrl, imageBounds).addTo(map);
 tile.setOpacity(0.6)
@@ -17,13 +17,14 @@ function style(feature) {
     };
 }
 
-var trailpath	= new L.geoJson.ajax('http://alecross-pc:3000/sodhs/trailpath', {
+var trailpath	= new L.geoJson.ajax('/sodhs/trailpath', {
+//var trailpath	= new L.geoJson.ajax('http://alecross-pc:3000/sodhs/trailpath', {
 	style: style
 }).addTo(map);
 	
 $.ajax({ 
 	type: 'GET', 
-	url: 'http://alecross-pc:3000/sodhs/trail', 
+	url: '/sodhs/trail', 
 	dataType: 'json',
 	success: function (data) {
 		var photos = [];
